@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendy Tees - Premium Quality T-Shirts</title>
+    <meta name="description" content="Shop our collection of premium quality t-shirts for men, women and kids. Sustainable materials, comfortable fits.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://trendy-tees.example.com/">
+    <meta property="og:title" content="Trendy Tees - Premium Quality T-Shirts">
+    <meta property="og:description" content="Shop our collection of premium quality t-shirts for men, women and kids.">
+    <meta property="og:image" content="https://trendy-tees.example.com/images/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://trendy-tees.example.com/">
+    <meta property="twitter:title" content="Trendy Tees - Premium Quality T-Shirts">
+    <meta property="twitter:description" content="Shop our collection of premium quality t-shirts for men, women and kids.">
+    <meta property="twitter:image" content="https://trendy-tees.example.com/images/social-share.jpg">
+
+    <!-- Tailwind CSS with DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: hsl(var(--b2));
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: hsl(var(--p));
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(var(--pf));
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        
+        /* Loading spinner */
+        .loading-spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid hsl(var(--p));
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            animation: rotation 1s linear infinite;
+        }
+        
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Smooth transitions */
+        html {
+            scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.1s;
+        }
+        
+        /* Product card hover effect */
+        .product-card:hover .product-image {
+            transform: scale(1.03);
+        }
+        
+        .product-image {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-base-100 text-base-content">
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="hidden fixed bottom-0 left-0 right-0 bg-neutral text-neutral-content p-4 shadow-lg z-50 animate-slide-in">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-1">
+                <p>We use cookies to enhance your experience. By continuing to browse, you agree to our use of cookies.</p>
+            </div>
+            <div class="flex gap-2">
+                <button id="cookie-accept" class="btn btn-sm btn-primary">Accept</button>
+                <button id="cookie-decline" class="btn btn-sm btn-ghost">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-base-100/80 backdrop-blur-sm shadow-sm">
+        <div class="navbar container mx-auto px-4">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="index.html"><i class="fas fa-home mr-2"></i> Home</a></li>
+                        <li><a href="#products"><i class="fas fa-tshirt mr-2"></i>Products</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-star mr-2"></i>Reviews</a></li>
+                        <li><a href="#about"><i class="fas fa-info-circle mr-2"></i>About</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <a href="index.html" class="btn btn-ghost normal-case text-xl gap-2">
+                    <i class="fas fa-tshirt text-primary"></i>
+                    <span class="font-bold">Trendy Tees</span>
+                </a>
+            </div>
+            
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 gap-1">
+                    <li><a href="index.html"><i class="fas fa-home mr-2"></i> Home</a></li>
+                    <li><a href="#products"><i class="fas fa-tshirt mr-2"></i>Products</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-star mr-2"></i>Reviews</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle mr-2"></i>About</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="navbar-end gap-2">
+                <!-- Social Sharing Dropdown -->
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle">
+                        <i class="fas fa-share-alt"></i>
+                    </label>
+                    <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="#" onclick="shareOnFacebook()"><i class="fab fa-facebook mr-2"></i>Facebook</a></li>
+                        <li><a href="#" onclick="shareOnTwitter()"><i class="fab fa-twitter mr-2"></i>Twitter</a></li>
+                        <li><a href="#" onclick="shareOnPinterest()"><i class="fab fa-pinterest mr-2"></i>Pinterest</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <label class="swap swap-rotate btn btn-ghost btn-circle">
+                    <input type="checkbox" id="theme-toggle" class="theme-checkbox" />
+                    <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+                    </svg>
+                    <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
+                    </svg>
+                </label>
+                
+                <!-- Cart Button -->
+                <div class="indicator">
+                    <span id="cart-count" class="indicator-item badge badge-primary">0</span> 
+                    <button id="cart-btn" class="btn btn-ghost btn-circle">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero min-h-[70vh] bg-gradient-to-r from-primary to-secondary">
+            <div class="hero-overlay bg-opacity-60"></div>
+            <div class="hero-content text-center text-neutral-content">
+                <div class="max-w-2xl">
+                    <h1 class="mb-6 text-5xl md:text-6xl font-bold">Premium Quality T-Shirts</h1>
+                    <p class="mb-8 text-lg md:text-xl">Discover our collection of comfortable, stylish t-shirts made from 100% organic cotton</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#products" class="btn btn-accent btn-lg animate-bounce">
+                            <i class="fas fa-tshirt mr-2"></i> Shop Now
+                        </a>
+                        <a href="#testimonials" class="btn btn-outline btn-lg">
+                            <i class="fas fa-star mr-2"></i> See Reviews
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="py-16 bg-base-100">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Our Collection</h2>
+                    <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                        Browse our carefully curated selection of premium t-shirts for every style and occasion.
+                    </p>
+                </div>
+                
+                <!-- Filter/Sort Controls -->
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="font-medium">Filter:</span>
+                        <select id="filter-by" class="select select-bordered select-sm">
+                            <option value="all">All Products</option>
+                            <option value="men">Men's</option>
+                            <option value="women">Women's</option>
+                            <option value="kids">Kids</option>
+                        </select>
+                    </div>
+                    
+                    <div class="flex items-center gap-2">
+                        <span class="font-medium">Sort by:</span>
+                        <select id="sort-by" class="select select-bordered select-sm">
+                            <option value="default">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name (A-Z)</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="products-grid">
+                    <!-- Product cards will be inserted here by JavaScript -->
+                </div>
+                
+                <!-- Loading State -->
+                <div id="products-loading" class="flex justify-center py-12">
+                    <div class="loading-spinner"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Details Modal -->
+        <dialog id="product-modal" class="modal">
+            <div class="modal-box max-w-4xl">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </form>
+                
+                <div id="product-modal-content" class="flex flex-col lg:flex-row gap-8">
+                    <!-- Content will be inserted by JavaScript -->
+                </div>
+            </div>
+            
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 bg-base-200">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">What Our Customers Say</h2>
+                    <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                        Don't just take our word for it - hear from our satisfied customers
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="card bg-base-100 shadow-lg">
+                        <div class="card-body">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="avatar">
+                                    <div class="w-16 rounded-full">
+                                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J.">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Sarah Johnson</h3>
+                                    <div class="rating rating-sm">
+                                        <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-1" class="mask mask-star-2 bg-orange-400" checked />
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="italic">"The quality of these t-shirts is amazing! I've bought three already and they're my favorite pieces in my wardrobe now."</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="card bg-base-100 shadow-lg">
+                        <div class="card-body">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="avatar">
+                                    <div class="w-16 rounded-full">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael C.">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Michael Chen</h3>
+                                    <div class="rating rating-sm">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="italic">"Great fit and comfortable fabric. The shipping was super fast too. Will definitely order again!"</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="card bg-base-100 shadow-lg">
+                        <div class="card-body">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="avatar">
+                                    <div class="w-16 rounded-full">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma R.">
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Emma Rodriguez</h3>
+                                    <div class="rating rating-sm">
+                                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" checked />
+                                        <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" checked />
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="italic">"I bought the kids' tees for my son and daughter. They love the designs and the fabric is so soft. Highly recommend!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-base-100">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Our Story" 
+                             class="rounded-xl shadow-2xl w-full object-cover h-96 lg:h-auto">
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <h2 class="text-4xl font-bold mb-6">Our Story</h2>
+                        <p class="mb-4 text-lg">
+                            Founded in 2018, Trendy Tees started with a simple mission: to create high-quality, comfortable t-shirts with unique designs that people love to wear every day.
+                        </p>
+                        <p class="mb-6 text-lg">
+                            All our products are made from 100% organic cotton and printed with eco-friendly inks. We're committed to sustainable fashion without compromising on style or comfort.
+                        </p>
+                        
+                        <div class="stats stats-vertical lg:stats-horizontal shadow">
+                            <div class="stat">
+                                <div class="stat-title">Happy Customers</div>
+                                <div class="stat-value text-primary">10K+</div>
+                                <div class="stat-desc">Since 2018</div>
+                            </div>
+                            
+                            <div class="stat">
+                                <div class="stat-title">Products Sold</div>
+                                <div class="stat-value text-secondary">25K+</div>
+                                <div class="stat-desc">Worldwide</div>
+                            </div>
+                            
+                            <div class="stat">
+                                <div class="stat-title">Satisfaction Rate</div>
+                                <div class="stat-value">98%</div>
+                                <div class="stat-desc">Customer Happiness</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-base-200">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                    <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+                        Have questions? We'd love to hear from you!
+                    </p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2 card bg-base-100 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="text-2xl font-bold mb-4">Contact Information</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="p-3 rounded-full bg-primary/10 text-primary">
+                                        <i class="fas fa-map-marker-alt text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Address</h4>
+                                        <p>123 Fashion Street, Style City, SC 12345</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="p-3 rounded-full bg-primary/10 text-primary">
+                                        <i class="fas fa-phone-alt text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Phone</h4>
+                                        <p>(123) 456-7890</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="p-3 rounded-full bg-primary/10 text-primary">
+                                        <i class="fas fa-envelope text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold">Email</h4>
+                                        <p>info@trendytees.example</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="divider">OR</div>
+                            
+                            <div class="flex justify-center gap-4">
+                                <a href="#" class="btn btn-circle btn-primary">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle btn-secondary">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle btn-accent">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 card bg-base-100 shadow-lg">
+                        <div class="card-body">
+                            <h3 class="text-2xl font-bold mb-4">Send Us a Message</h3>
+                            
+                            <form class="space-y-4">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Your Name</span>
+                                    </label>
+                                    <input type="text" placeholder="Your Name" class="input input-bordered" required>
+                                </div>
+                                
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Your Email</span>
+                                    </label>
+                                    <input type="email" placeholder="Your email" class="input input-bordered" required>
+                                </div>
+                                
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Subject</span>
+                                    </label>
+                                    <input type="text" placeholder="Question about..." class="input input-bordered" required>
+                                </div>
+                                
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Your Message</span>
+                                    </label>
+                                    <textarea class="textarea textarea-bordered h-32" placeholder="Your message here..." required></textarea>
+                                </div>
+                                
+                                <div class="form-control mt-6">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane mr-2"></i> Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="py-16 bg-primary text-primary-content">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-2xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+                    <p class="mb-6 text-lg">
+                        Subscribe to our newsletter for exclusive offers, new arrivals, and style tips.
+                    </p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-2 justify-center">
+                        <input type="email" placeholder="Your email address" class="input input-bordered w-full max-w-xs text-black" required>
+                        <button type="submit" class="btn btn-accent">
+                            <i class="fas fa-envelope mr-2"></i> Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Drawer -->
+    <div class="drawer drawer-end z-50">
+        <input id="cart-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-side">
+            <label for="cart-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+            <div class="menu p-4 w-full max-w-md min-h-full bg-base-100 text-base-content">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold">Your Shopping Cart</h3>
+                    <label for="cart-drawer" class="btn btn-sm btn-circle btn-ghost">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </div>
+                
+                <div id="cart-items" class="flex-1 overflow-y-auto">
+                    <!-- Cart items will be inserted here by JavaScript -->
+                    <div class="text-center py-12">
+                        <i class="fas fa-shopping-cart text-5xl text-gray-400 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">Your cart is empty</h4>
+                        <p class="mb-4">Looks like you haven't added anything to your cart yet</p>
+                        <a href="#products" class="btn btn-primary" onclick="document.getElementById('cart-drawer').checked = false;">
+                            <i class="fas fa-tshirt mr-2"></i> Browse Products
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-base-300 pt-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="font-medium">Subtotal:</span>
+                        <span id="cart-subtotal" class="font-bold">$0.00</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="font-medium">Shipping:</span>
+                        <span id="cart-shipping" class="font-bold">Calculated at checkout</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-6 text-lg">
+                        <span class="font-bold">Total:</span>
+                        <span id="cart-total" class="font-bold text-primary">$0.00</span>
+                    </div>
+                    
+                    <button id="checkout-btn" class="btn btn-primary w-full" disabled>
+                        Proceed to Checkout
+                    </button>
+                    
+                    <div class="text-center mt-4 text-sm text-base-content/70">
+                        <p>or <a href="#products" class="link" onclick="document.getElementById('cart-drawer').checked = false;">continue shopping</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <dialog id="checkout-modal" class="modal">
+        <div class="modal-box max-w-4xl w-full">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                    <i class="fas fa-times"></i>
+                </button>
+            </form>
+            
+            <div id="checkout-steps" class="steps mb-8">
+                <div class="step step-primary" data-step="1">Shipping</div>
+                <div class="step" data-step="2">Payment</div>
+                <div class="step" data-step="3">Review</div>
+                <div class="step" data-step="4">Confirmation</div>
+            </div>
+            
+            <div id="checkout-content">
+                <!-- Content will be inserted by JavaScript -->
+            </div>
+        </div>
+        
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+
+    <!-- Footer -->
+    <footer class="footer p-10 bg-neutral text-neutral-content">
+        <div>
+            <span class="footer-title">Shop</span>
+            <a href="#products" class="link link-hover">All Products</a>
+            <a href="#" class="link link-hover">New Arrivals</a>
+            <a href="#" class="link link-hover">Best Sellers</a>
+            <a href="#" class="link link-hover">Sale Items</a>
+        </div>
+        
+        <div>
+            <span class="footer-title">Company</span>
+            <a href="#about" class="link link-hover">About us</a>
+            <a href="#" class="link link-hover">Careers</a>
+            <a href="#" class="link link-hover">Press kit</a>
+            <a href="#" class="link link-hover">Blog</a>
+        </div>
+        
+        <div>
+            <span class="footer-title">Legal</span>
+            <a href="#" class="link link-hover">Terms of use</a>
+            <a href="#" class="link link-hover">Privacy policy</a>
+            <a href="#" class="link link-hover">Cookie policy</a>
+            <a href="#" class="link link-hover">Shipping policy</a>
+        </div>
+        
+        <div>
+            <span class="footer-title">Newsletter</span>
+            <div class="form-control w-80">
+                <label class="label">
+                    <span class="label-text">Enter your email address</span>
+                </label>
+                <div class="relative">
+                    <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16 text-black">
+                    <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <footer class="footer px-10 py-4 border-t bg-neutral text-neutral-content border-base-300">
+        <div class="items-center grid-flow-col">
+            <i class="fas fa-tshirt text-2xl text-primary"></i>
+            <p>Trendy Tees Ltd. <br>Providing stylish t-shirts since 2018</p>
+        </div>
+        
+        <div class="md:place-self-center md:justify-self-end">
+            <div class="grid grid-flow-col gap-4">
+                <a href="#" class="link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="link"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast toast-top toast-end hidden">
+        <div class="alert alert-success animate-fade-in">
+            <span id="toast-message">Item added to cart!</span>
+        </div>
+    </div>
+
+    <script>
+        // Product data
+        const products = [
+            {
+                id: 1,
+                name: "Classic White Tee",
+                price: 24.99,
+                category: "men",
+                image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Our classic white t-shirt made from 100% organic cotton for ultimate comfort. Perfect for everyday wear and layering. Pre-shrunk fabric maintains shape wash after wash.",
+                sizes: ["S", "M", "L", "XL"],
+                colors: ["White"],
+                stock: 42,
+                rating: 4.8,
+                reviews: 128,
+                tags: ["best-seller", "organic", "basic"]
+            },
+            {
+                id: 2,
+                name: "Black Oversized Tee",
+                price: 29.99,
+                category: "women",
+                image: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Trendy oversized black t-shirt perfect for a casual yet stylish look. Relaxed fit with dropped shoulders for maximum comfort. Pair with jeans or leggings for a complete outfit.",
+                sizes: ["XS", "S", "M", "L"],
+                colors: ["Black"],
+                stock: 36,
+                rating: 4.6,
+                reviews: 94,
+                tags: ["oversized", "trending", "comfort"]
+            },
+            {
+                id: 3,
+                name: "Graphic Print Tee",
+                price: 32.99,
+                category: "men",
+                image: "https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Unique graphic print t-shirt that makes a statement wherever you go. Vibrant colors that won't fade. Regular fit with crew neckline. Machine wash cold, tumble dry low.",
+                sizes: ["S", "M", "L", "XL", "XXL"],
+                colors: ["White", "Black"],
+                stock: 28,
+                rating: 4.9,
+                reviews: 156,
+                tags: ["graphic", "statement", "limited"]
+            },
+            {
+                id: 4,
+                name: "Striped Crewneck Tee",
+                price: 27.99,
+                category: "women",
+                image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Classic striped crewneck t-shirt for a timeless casual look. Breathable cotton blend fabric. Fitted silhouette that flatters all body types. Available in multiple color combinations.",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                colors: ["Navy/White", "Black/White", "Red/White"],
+                stock: 51,
+                rating: 4.7,
+                reviews: 203,
+                tags: ["striped", "classic", "crewneck"]
+            },
+            {
+                id: 5,
+                name: "Pocket Detail Tee",
+                price: 26.99,
+                category: "men",
+                image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Simple t-shirt with a chest pocket for added functionality and style. Mid-weight fabric that's perfect for year-round wear. Reinforced stitching for durability. Available in multiple neutral tones.",
+                sizes: ["S", "M", "L", "XL", "XXL"],
+                colors: ["Heather Gray", "Navy", "Olive"],
+                stock: 39,
+                rating: 4.5,
+                reviews: 87,
+                tags: ["pocket", "utility", "casual"]
+            },
+            {
+                id: 6,
+                name: "V-Neck Basic Tee",
+                price: 22.99,
+                category: "women",
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Essential v-neck t-shirt that pairs perfectly with any outfit. Soft, lightweight fabric with just the right amount of stretch. Flattering v-neckline that's not too deep. Perfect for layering or wearing alone.",
+                sizes: ["XS", "S", "M", "L"],
+                colors: ["White", "Black", "Gray", "Burgundy"],
+                stock: 64,
+                rating: 4.4,
+                reviews: 112,
+                tags: ["v-neck", "basic", "essential"]
+            },
+            {
+                id: 7,
+                name: "Kids Dinosaur Tee",
+                price: 19.99,
+                category: "kids",
+                image: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Fun dinosaur graphic tee for kids who love adventure. Made with super-soft organic cotton that's gentle on sensitive skin. Reinforced seams withstand active play. Screen-printed design that lasts through many washes.",
+                sizes: ["2T", "3T", "4T", "5/6", "7/8"],
+                colors: ["Blue", "Green", "Red"],
+                stock: 73,
+                rating: 4.9,
+                reviews: 241,
+                tags: ["kids", "dinosaur", "fun"]
+            },
+            {
+                id: 8,
+                name: "Kids Rainbow Tee",
+                price: 21.99,
+                category: "kids",
+                image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
+                description: "Colorful rainbow design that kids will love to wear every day. Bright, cheerful colors that resist fading. Tagless label prevents itching. Slightly roomy cut for comfort and growth room.",
+                sizes: ["2T", "3T", "4T", "5/6", "7/8", "9/10"],
+                colors: ["White", "Pink", "Light Blue"],
+                stock: 58,
+                rating: 4.8,
+                reviews: 187,
+                tags: ["kids", "rainbow", "colorful"]
+            }
+        ];
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let currentCheckoutStep = 1;
+
+        // DOM Elements
+        const productsGrid = document.getElementById('products-grid');
+        const productsLoading = document.getElementById('products-loading');
+        const cartBtn = document.getElementById('cart-btn');
+        const cartCount = document.getElementById('cart-count');
+        const cartItems = document.getElementById('cart-items');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartTotal = document.getElementById('cart-total');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const sortBy = document.getElementById('sort-by');
+        const filterBy = document.getElementById('filter-by');
+        const productModal = document.getElementById('product-modal');
+        const productModalContent = document.getElementById('product-modal-content');
+        const checkoutModal = document.getElementById('checkout-modal');
+        const checkoutContent = document.getElementById('checkout-content');
+        const checkoutSteps = document.getElementById('checkout-steps');
+        const themeToggle = document.getElementById('theme-toggle');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toast-message');
+        const cookieConsent = document.getElementById('cookie-consent');
+        const cookieAccept = document.getElementById('cookie-accept');
+        const cookieDecline = document.getElementById('cookie-decline');
+
+        // Display products
+        function displayProducts(productsToDisplay) {
+            productsGrid.innerHTML = '';
+            
+            if (productsToDisplay.length === 0) {
+                productsGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="fas fa-tshirt text-5xl text-gray-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">No products found</h3>
+                        <p>Try adjusting your filters or search criteria</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            productsToDisplay.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'card bg-base-100 shadow-md hover:shadow-xl transition-shadow duration-300 product-card';
+                productCard.innerHTML = `
+                    <figure class="px-4 pt-4 relative">
+                        <img src="${product.image}" alt="${product.name}" 
+                             class="rounded-xl h-64 w-full object-cover product-image" 
+                             loading="lazy">
+                        ${product.stock < 10 ? `<div class="badge badge-error absolute top-6 right-6 text-white">Almost Gone!</div>` : ''}
+                        ${product.tags.includes('best-seller') ? `<div class="badge badge-primary absolute top-6 right-6 text-white">Bestseller</div>` : ''}
+                    </figure>
+                    <div class="card-body">
+                        <div class="flex justify-between items-start">
+                            <h3 class="card-title">${product.name}</h3>
+                            <div class="badge badge-outline">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</div>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <div class="rating rating-sm">
+                                ${Array(5).fill().map((_, i) => 
+                                    `<input type="radio" name="rating-${product.id}" class="mask mask-star-2 ${i < Math.floor(product.rating) ? 'bg-orange-400' : 'bg-gray-300'}" ${i === Math.floor(product.rating) - 1 ? 'checked' : ''} disabled />`
+                                ).join('')}
+                            </div>
+                            <span class="text-sm ml-2">(${product.reviews})</span>
+                        </div>
+                        <p class="text-lg font-bold text-primary">$${product.price.toFixed(2)}</p>
+                        <div class="card-actions justify-end mt-4">
+                            <button class="btn btn-primary btn-sm add-to-cart" data-id="${product.id}">
+                                <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-ghost btn-sm view-details" data-id="${product.id}">
+                                <i class="fas fa-info-circle mr-2"></i> Details
+                            </button>
+                        </div>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+            
+            // Add event listeners to "Add to Cart" buttons
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', addToCart);
+            });
+            
+            // Add event listeners to "View Details" buttons
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', showProductDetails);
+            });
+        }
+
+        // Show product details modal
+        function showProductDetails(e) {
+            const productId = parseInt(e.target.closest('button').getAttribute('data-id'));
+            const product = products.find(p => p.id === productId);
+            
+            productModalContent.innerHTML = `
+                <div class="w-full lg:w-1/2">
+                    <img src="${product.image}" alt="${product.name}" class="rounded-lg w-full h-auto max-h-96 object-cover">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-2">${product.name}</h2>
+                    <div class="flex items-center mb-4">
+                        <div class="rating rating-sm">
+                            ${Array(5).fill().map((_, i) => 
+                                `<input type="radio" name="modal-rating-${product.id}" class="mask mask-star-2 ${i < Math.floor(product.rating) ? 'bg-orange-400' : 'bg-gray-300'}" ${i === Math.floor(product.rating) - 1 ? 'checked' : ''} disabled />`
+                            ).join('')}
+                        </div>
+                        <span class="text-sm ml-2">${product.rating} (${product.reviews} reviews)</span>
+                    </div>
+                    
+                    <p class="text-2xl font-bold text-primary mb-4">$${product.price.toFixed(2)}</p>
+                    
+                    <p class="mb-6">${product.description}</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="font-bold mb-2">Available Colors:</h3>
+                        <div class="flex gap-2">
+                            ${product.colors.map(color => `
+                                <div class="badge badge-outline">${color}</div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="font-bold mb-2">Select Size:</h3>
+                        <div class="flex flex-wrap gap-2" id="size-selection">
+                            ${product.sizes.map(size => `
+                                <button class="btn btn-sm size-option ${size === product.sizes[0] ? 'btn-primary' : 'btn-outline'}">
+                                    ${size}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4">
+                        <div class="join">
+                            <button class="join-item btn btn-sm" onclick="this.nextElementSibling.stepDown(); updateQuantityDisplay(this.nextElementSibling)">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <input type="number" min="1" max="10" value="1" 
+                                   class="join-item btn btn-sm w-16 text-center quantity-input" 
+                                   onchange="updateQuantityDisplay(this)">
+                            <button class="join-item btn btn-sm" onclick="this.previousElementSibling.stepUp(); updateQuantityDisplay(this.previousElementSibling)">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        
+                        <button class="btn btn-primary flex-1 add-to-cart-modal" data-id="${product.id}">
+                            <i class="fas fa-cart-plus mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 text-sm text-base-content/70">
+                        <p><i class="fas fa-box mr-2"></i> ${product.stock} in stock</p>
+                        <p><i class="fas fa-truck mr-2"></i> Free shipping on orders over $50</p>
+                        <p><i class="fas fa-undo mr-2"></i> 30-day return policy</p>
+                    </div>
+                </div>
+            `;
+            
+            // Add event listeners to size options
+            document.querySelectorAll('.size-option').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('.size-option').forEach(btn => {
+                        btn.classList.remove('btn-primary');
+                        btn.classList.add('btn-outline');
+                    });
+                    this.classList.remove('btn-outline');
+                    this.classList.add('btn-primary');
+                });
+            });
+            
+            // Add event listener to modal's add to cart button
+            document.querySelector('.add-to-cart-modal').addEventListener('click', function() {
+                const quantity = parseInt(document.querySelector('.quantity-input').value);
+                const selectedSize = document.querySelector('.size-option.btn-primary').textContent.trim();
+                
+                addToCart({
+                    target: this,
+                    detail: { quantity, size: selectedSize }
+                });
+                
+                productModal.close();
+            });
+            
+            productModal.showModal();
+        }
+
+        // Helper function for quantity display
+        function updateQuantityDisplay(input) {
+            if (input.value < 1) input.value = 1;
+            if (input.value > 10) input.value = 10;
+        }
+
+        // Add to cart function
+        function addToCart(e) {
+            const productId = parseInt(e.target.getAttribute('data-id'));
+            const product = products.find(p => p.id === productId);
+            const quantity = e.detail?.quantity || 1;
+            const size = e.detail?.size || product.sizes[0];
+            
+            // Check if product is already in cart
+            const existingItem = cart.find(item => item.id === productId && item.size === size);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity,
+                    size,
+                    selectedColor: product.colors[0]
+                });
+            }
+            
+            // Show toast notification
+            showToast(`${quantity} ${product.name} (${size}) added to cart!`);
+            
+            updateCart();
+            saveCartToLocalStorage();
+        }
+
+        // Remove from cart function
+        function removeFromCart(productId, size) {
+            cart = cart.filter(item => !(item.id === productId && item.size === size));
+            updateCart();
+            saveCartToLocalStorage();
+        }
+
+        // Update quantity in cart
+        function updateCartQuantity(productId, size, newQuantity) {
+            const item = cart.find(item => item.id === productId && item.size === size);
+            if (item) {
+                item.quantity = parseInt(newQuantity);
+                if (item.quantity <= 0) {
+                    removeFromCart(productId, size);
+                } else {
+                    updateCart();
+                    saveCartToLocalStorage();
+                }
+            }
+        }
+
+        // Update cart UI
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems > 99 ? '99+' : totalItems;
+            
+            // Update cart items
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-shopping-cart text-5xl text-gray-400 mb-4"></i>
+                        <h4 class="text-xl font-bold mb-2">Your cart is empty</h4>
+                        <p class="mb-4">Looks like you haven't added anything to your cart yet</p>
+                        <a href="#products" class="btn btn-primary" onclick="document.getElementById('cart-drawer').checked = false;">
+                            <i class="fas fa-tshirt mr-2"></i> Browse Products
+                        </a>
+                    </div>
+                `;
+                cartSubtotal.textContent = '$0.00';
+                cartTotal.textContent = '$0.00';
+                checkoutBtn.disabled = true;
+                return;
+            }
+            
+            cartItems.innerHTML = '';
+            let subtotal = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.className = 'animate-slide-in';
+                cartItem.style.animationDelay = `${index * 0.1}s`;
+                cartItem.innerHTML = `
+                    <div class="flex gap-4 mb-4 pb-4 border-b border-base-300">
+                        <img src="${item.image}" alt="${item.name}" class="w-20 h-20 object-cover rounded-lg">
+                        <div class="flex-1">
+                            <h4 class="font-bold">${item.name}</h4>
+                            <p class="text-primary font-bold">$${item.price.toFixed(2)}</p>
+                            <p class="text-sm">Size: ${item.size} | Color: ${item.selectedColor}</p>
+                            
+                            <div class="flex items-center gap-2 mt-2">
+                                <div class="join">
+                                    <button class="join-item btn btn-xs" onclick="updateCartQuantity(${item.id}, '${item.size}', ${item.quantity - 1})">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input type="number" min="1" value="${item.quantity}" 
+                                           class="join-item btn btn-xs w-12 text-center" 
+                                           onchange="updateCartQuantity(${item.id}, '${item.size}', this.value)">
+                                    <button class="join-item btn btn-xs" onclick="updateCartQuantity(${item.id}, '${item.size}', ${item.quantity + 1})">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-ghost btn-sm remove-item" data-id="${item.id}" data-size="${item.size}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.closest('button').getAttribute('data-id'));
+                    const size = e.target.closest('button').getAttribute('data-size');
+                    removeFromCart(productId, size);
+                });
+            });
+            
+            // Update totals
+            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            cartTotal.textContent = `$${subtotal.toFixed(2)}`; // In a real app, you'd add shipping/tax
+            checkoutBtn.disabled = false;
+        }
+
+        // Show checkout process
+        function showCheckout() {
+            currentCheckoutStep = 1;
+            renderCheckoutStep();
+            checkoutModal.showModal();
+        }
+
+        // Render the current checkout step
+        function renderCheckoutStep() {
+            // Update step indicators
+            document.querySelectorAll('#checkout-steps .step').forEach((step, index) => {
+                if (index + 1 < currentCheckoutStep) {
+                    step.classList.add('step-primary');
+                } else if (index + 1 === currentCheckoutStep) {
+                    step.classList.add('step-primary');
+                } else {
+                    step.classList.remove('step-primary');
+                }
+            });
+            
+            switch (currentCheckoutStep) {
+                case 1: // Shipping
+                    checkoutContent.innerHTML = `
+                        <h3 class="text-2xl font-bold mb-6">Shipping Information</h3>
+                        
+                        <form id="shipping-form" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">First Name</span>
+                                    </label>
+                                    <input type="text" placeholder="John" class="input input-bordered" required>
+                                </div>
+                                
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">Last Name</span>
+                                    </label>
+                                    <input type="text" placeholder="Doe" class="input input-bordered" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Address</span>
+                                </label>
+                                <input type="text" placeholder="123 Main St" class="input input-bordered" required>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Address 2 (Optional)</span>
+                                </label>
+                                <input type="text" placeholder="Apt, suite, etc." class="input input-bordered">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">City</span>
+                                    </label>
+                                    <input type="text" placeholder="New York" class="input input-bordered" required>
+                                </div>
+                                
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">State/Province</span>
+                                    </label>
+                                    <select class="select select-bordered" required>
+                                        <option disabled selected>Select</option>
+                                        <option>New York</option>
+                                        <option>California</option>
+                                        <option>Texas</option>
+                                        <!-- More options would be here -->
+                                    </select>
+                                </div>
+                                
+                                <div class="form-control">
+                                    <label class="label">
+                                        <span class="label-text">ZIP/Postal Code</span>
+                                    </label>
+                                    <input type="text" placeholder="10001" class="input input-bordered" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Country</span>
+                                </label>
+                                <select class="select select-bordered" required>
+                                    <option>United States</option>
+                                    <option>Canada</option>
+                                    <option>United Kingdom</option>
+                                    <!-- More options would be here -->
+                                </select>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Phone Number</span>
+                                </label>
+                                <input type="tel" placeholder="(123) 456-7890" class="input input-bordered" required>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label">
+                                    <span class="label-text">Email</span>
+                                </label>
+                                <input type="email" placeholder="john@example.com" class="input input-bordered" required>
+                            </div>
+                            
+                            <div class="form-control mt-8">
+                                <div class="flex justify-between">
+                                    <button type="button" class="btn btn-ghost" onclick="document.getElementById('cart-drawer').checked = true; checkoutModal.close()">
+                                        <i class="fas fa-arrow-left mr-2"></i> Back to Cart
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="goToCheckoutStep(2)">
+                                        Continue to Payment <i class="fas fa-arrow-right ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    `;
+                    break;
+                    
+                case 2: // Payment
+                    checkoutContent.innerHTML = `
+                        <h3 class="text-2xl font-bold mb-6">Payment Method</h3>
+                        
+                        <form id="payment-form" class="space-y-4">
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="radio" name="payment-method" class="radio checked:bg-primary" checked>
+                                    <span class="label-text text-lg">Credit/Debit Card</span>
+                                </label>
+                                
+                                <div class="mt-4 space-y-4">
+                                    <div class="form-control">
+                                        <label class="label">
+                                            <span class="label-text">Card Number</span>
+                                        </label>
+                                        <input type="text" placeholder="1234 5678 9012 3456" class="input input-bordered" required>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="label-text">Expiration Date</span>
+                                            </label>
+                                            <input type="text" placeholder="MM/YY" class="input input-bordered" required>
+                                        </div>
+                                        
+                                        <div class="form-control">
+                                            <label class="label">
+                                                <span class="label-text">Security Code (CVV)</span>
+                                            </label>
+                                            <input type="text" placeholder="123" class="input input-bordered" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-control">
+                                        <label class="label">
+                                            <span class="label-text">Name on Card</span>
+                                        </label>
+                                        <input type="text" placeholder="John Doe" class="input input-bordered" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="radio" name="payment-method" class="radio checked:bg-primary">
+                                    <span class="label-text text-lg">PayPal</span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-control">
+                                <label class="label cursor-pointer justify-start gap-4">
+                                    <input type="radio" name="payment-method" class="radio checked:bg-primary">
+                                    <span class="label-text text-lg">Apple Pay</span>
+                                </label>
+                            </div>
+                            
+                            <div class="form-control mt-8">
+                                <div class="flex justify-between">
+                                    <button type="button" class="btn btn-ghost" onclick="goToCheckoutStep(1)">
+                                        <i class="fas fa-arrow-left mr-2"></i> Back to Shipping
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="goToCheckoutStep(3)">
+                                        Review Order <i class="fas fa-arrow-right ml-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    `;
+                    break;
+                    
+                case 3: // Review
+                    const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                    const shipping = subtotal > 50 ? 0 : 4.99;
+                    const tax = subtotal * 0.08; // Example tax rate
+                    const total = subtotal + shipping + tax;
+                    
+                    checkoutContent.innerHTML = `
+                        <h3 class="text-2xl font-bold mb-6">Review Your Order</h3>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div class="lg:col-span-2">
+                                <h4 class="text-lg font-bold mb-4">Order Summary</h4>
+                                
+                                <div class="space-y-4">
+                                    ${cart.map(item => `
+                                        <div class="flex gap-4 pb-4 border-b border-base-300">
+                                            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-lg">
+                                            <div class="flex-1">
+                                                <h5 class="font-medium">${item.name}</h5>
+                                                <p class="text-sm">Size: ${item.size} | Qty: ${item.quantity}</p>
+                                                <p class="text-primary font-medium">$${(item.price * item.quantity).toFixed(2)}</p>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="text-lg font-bold mb-4">Shipping Information</h4>
+                                    <div class="card bg-base-200 p-4">
+                                        <p>John Doe</p>
+                                        <p>123 Main St</p>
+                                        <p>New York, NY 10001</p>
+                                        <p>United States</p>
+                                        <p class="mt-2">john@example.com</p>
+                                        <p>(123) 456-7890</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6">
+                                    <h4 class="text-lg font-bold mb-4">Payment Method</h4>
+                                    <div class="card bg-base-200 p-4">
+                                        <p>Visa ending in 4242</p>
+                                        <p>Expires 12/25</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="card bg-base-200 p-6 sticky top-4">
+                                    <h4 class="text-lg font-bold mb-4">Order Total</h4>
+                                    
+                                    <div class="space-y-2 mb-4">
+                                        <div class="flex justify-between">
+                                            <span>Subtotal</span>
+                                            <span>$${subtotal.toFixed(2)}</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Shipping</span>
+                                            <span>$${shipping.toFixed(2)}</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Tax</span>
+                                            <span>$${tax.toFixed(2)}</span>
+                                        </div>
+                                        <div class="divider my-1"></div>
+                                        <div class="flex justify-between text-lg font-bold">
+                                            <span>Total</span>
+                                            <span>$${total.toFixed(2)}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-control mt-4">
+                                        <label class="label cursor-pointer justify-start gap-4">
+                                            <input type="checkbox" checked class="checkbox checkbox-primary">
+                                            <span class="label-text">I agree to the <a href="#" class="link">Terms & Conditions</a></span>
+                                        </label>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary w-full mt-6" onclick="goToCheckoutStep(4)">
+                                        Place Order
+                                    </button>
+                                    
+                                    <div class="text-center mt-4 text-sm">
+                                        <p><i class="fas fa-lock mr-2"></i> Secure checkout</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 4: // Confirmation
+                    checkoutContent.innerHTML = `
+                        <div class="text-center py-8">
+                                                    <div class="flex justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center">
+                                <i class="fas fa-check text-4xl text-primary"></i>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-2">Order Confirmed!</h3>
+                        <p class="text-lg mb-6">Thank you for your purchase</p>
+                        
+                        <div class="card bg-base-200 p-6 max-w-md mx-auto mb-6">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Order Number:</span>
+                                <span class="font-bold">#${Math.floor(100000 + Math.random() * 900000)}</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Date:</span>
+                                <span>${new Date().toLocaleDateString()}</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Total:</span>
+                                <span class="font-bold">$${cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2)}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Payment Method:</span>
+                                <span>Visa ending in 4242</span>
+                            </div>
+                        </div>
+                        
+                        <p class="mb-6">We've sent a confirmation email to <span class="font-medium">john@example.com</span></p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="index.html" class="btn btn-primary">
+                                <i class="fas fa-home mr-2"></i> Back to Home
+                            </a>
+                            <a href="#products" class="btn btn-outline" onclick="checkoutModal.close()">
+                                <i class="fas fa-tshirt mr-2"></i> Continue Shopping
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                // Clear cart after successful order
+                cart = [];
+                updateCart();
+                saveCartToLocalStorage();
+                break;
+        }
+    }
+
+    // Navigate between checkout steps
+    function goToCheckoutStep(step) {
+        currentCheckoutStep = step;
+        renderCheckoutStep();
+    }
+
+    // Show toast notification
+    function showToast(message) {
+        toastMessage.textContent = message;
+        toast.classList.remove('hidden');
+        
+        setTimeout(() => {
+            toast.classList.add('hidden');
+        }, 3000);
+    }
+
+    // Social sharing functions
+    function shareOnFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+    
+    function shareOnTwitter() {
+        const text = encodeURIComponent("Check out these awesome t-shirts from Trendy Tees!");
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+    }
+    
+    function shareOnPinterest() {
+        const url = encodeURIComponent(window.location.href);
+        const media = encodeURIComponent("https://trendy-tees.example.com/images/social-share.jpg");
+        const description = encodeURIComponent("Premium quality t-shirts from Trendy Tees");
+        window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${media}&description=${description}`, '_blank');
+    }
+
+    // Filter and sort products
+    function filterAndSortProducts() {
+        productsLoading.classList.remove('hidden');
+        
+        // Simulate loading delay
+        setTimeout(() => {
+            let filteredProducts = [...products];
+            
+            // Filter by category
+            const category = filterBy.value;
+            if (category !== 'all') {
+                filteredProducts = filteredProducts.filter(product => product.category === category);
+            }
+            
+            // Sort products
+            const sortValue = sortBy.value;
+            switch (sortValue) {
+                case 'price-low':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'newest':
+                    filteredProducts.sort((a, b) => b.id - a.id); // Using ID as proxy for newness
+                    break;
+                default:
+                    // Default sorting (by ID)
+                    filteredProducts.sort((a, b) => a.id - b.id);
+            }
+            
+            displayProducts(filteredProducts);
+            productsLoading.classList.add('hidden');
+        }, 500);
+    }
+
+    // Save cart to localStorage
+    function saveCartToLocalStorage() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Load cart from localStorage
+    function loadCartFromLocalStorage() {
+        const savedCart = localStorage.getItem('cart');
+        if (savedCart) {
+            cart = JSON.parse(savedCart);
+            updateCart();
+        }
+    }
+
+    // Theme toggle functionality
+    function setupThemeToggle() {
+        // Check for saved theme preference or use preferred color scheme
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.checked = true;
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeToggle.checked = false;
+        }
+        
+        // Handle theme toggle
+        themeToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+
+    // Cookie consent functionality
+    function setupCookieConsent() {
+        const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+        
+        if (cookiesAccepted === null) {
+            // Show consent banner if no preference set
+            setTimeout(() => {
+                cookieConsent.classList.remove('hidden');
+            }, 1000);
+        }
+        
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieConsent.classList.add('hidden');
+            // Here you would typically set your analytics cookies
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+            });
+        });
+        
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'false');
+            cookieConsent.classList.add('hidden');
+            // Here you would typically not set analytics cookies
+        });
+    }
+
+    // Initialize
+    function init() {
+        displayProducts(products);
+        loadCartFromLocalStorage();
+        setupThemeToggle();
+        setupCookieConsent();
+        
+        // Make functions available globally for inline event handlers
+        window.updateCartQuantity = updateCartQuantity;
+        window.goToCheckoutStep = goToCheckoutStep;
+        window.updateQuantityDisplay = updateQuantityDisplay;
+    }
+
+    // Event Listeners
+    cartBtn.addEventListener('click', () => {
+        document.getElementById('cart-drawer').checked = true;
+    });
+    
+    checkoutBtn.addEventListener('click', showCheckout);
+    
+    sortBy.addEventListener('change', filterAndSortProducts);
+    filterBy.addEventListener('change', filterAndSortProducts);
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
